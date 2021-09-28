@@ -6,10 +6,10 @@
 /// - Syntax Error
 
 /// WRITE YOUR ANALYSIS HERE
-/// - Type Error, kesalahan ketika operasi tidak dapat dilakukan, biasanya (tetapi tidak secara eksklusif) ketika nilai bukan dari tipe yang diharapkan.
-/// - Reference Error, kesalahan ketika variabel yang tidak ada direferensikan
-/// - Range Error, kesalahan ketika nilai tidak dalam set atau rentang nilai yang diizinkan.
-/// - Syntax Error, kesalahan saat mencoba menafsirkan kode yang tidak valid secara sintaksis
+/// - Type Error : terjadi kesalahan tipe variabel
+/// - Reference Error : terjadi referensi ilegal (terdapat variabel yang belum dideklarasikan)
+/// - Range Error : terdapat angkat di luar jangkauan
+/// - Syntax Error : terjadi kesalahan syntax
 
 /// Soal - 02
 /// Kamu diminta untuk melakukan analisa terhadap baris kode dibawah dengan instruksi detail sebagai berikut:
@@ -20,7 +20,7 @@
 /// WRITE YOUR ANALYSIS HERE
 /// - akan muncul error di bagian console.log(salaryWithConst) sedangkan console.log(salaryWithVar) menampilkan  pesan undefined
 /// - reference error
-/// - karena variabel dideklarasikan dibawah
+/// - karena variabel belum dideklarasikan 
 console.log(salaryWithVar);
 console.log(salaryWithConst);
 

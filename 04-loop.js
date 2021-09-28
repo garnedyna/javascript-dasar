@@ -1,62 +1,61 @@
 /// Soal - 01
 /// Kamu diminta untuk membuat sebuah perulangan menggunakan for loop, untuk mencetak angka prima dari 1 ~ 100
 /// EDIT HERE
-let Prima = 0;
+let i = 0
+let j = 0
 
-for (let i = 2; i <= 100; i++) {
-  for (let j = 1; j <= i; j++) {
-    if (i % j == 0) {
-      Prima++;
+for(i = 1; i <= 100; i++){
+  let count = 0
+for(j = i; j >= 1; j = j - 1){
+    if(i%j === 0){
+      count = count + 1
     }
   }
-
-  if (Prima == 2) {
-    // console.log(i)
+  if(count === 2){
+    console.log(i)
   }
-  Prima = 0;
 }
+
 
 /// Soal - 02
 /// Kamu diminta untuk menemukan bilangan prima ke-50, temukan bilangan tersebut menggunakan while loop
-let PrimaCounter = 0;
-let fiftithPrima = 50;
-
-/// EDIT HERE
-let i = 2;
-let fiftithNumberOfPrima;
-
-while (PrimaCounter < fiftithPrima) {
-  for (let j = 1; j <= i; j++) {
-    if (i % j == 0) {
-      Prima ++;
+let primeCounter = 0;
+let fiftiethPrime = 50
+let hitungpprima = 0
+let x = 0
+while(primeCounter <= 250){
+  primeCounter++
+  let count = 0
+for(x = primeCounter; x >= 1; x = x - 1){
+    if(primeCounter%x === 0){
+      count = count + 1
     }
   }
-
-  if (Prima == 2) {
-    fiftithNumberOfPrima = i;
-    PrimaCounter++;
+  if(count === 2){
+  hitungpprima++
+  if(hitungpprima === fiftiethPrime){
+  console.log(primeCounter + " ke " + hitungpprima)
   }
-  Prima = 0;
-  i++;
+  }
 }
 
-console.log(fiftithNumberOfPrima);
+
+
 
 /// Soal - 03
 /// Kamu diminta untuk menemukan bilangan ganjil ke-50, temukan bilangan tersebut menggunakan do while loop
-let ganjilCounter = 0;
-let fiftithganjil = 50;
+let oddCounter = 0;
+let fiftiethOdd;
 
 /// EDIT HERE
-let fiftithNumberOfganjil;
-i = 0;
-
+index = 0;
 do {
-  if (i % 2 !== 0) {
-    fiftithNumberOfganjil = i;
-    ganjilCounter++;
-  }
-  i++;
-} while (ganjilCounter < fiftithganjil);
+    if(index % 2 != 0){
+        fiftiethOdd = index;
+        oddCounter++;
+    }
+    index++;
+} while (oddCounter < 50);
 
-console.log(fiftithNumberOfganjil);
+
+console.log("fiftiethOdd is " + fiftiethOdd);

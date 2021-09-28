@@ -6,33 +6,24 @@
 /// - buatlah implementasi sederhana dari tiap-tiap variable scope yang dimiliki oleh Javascript
 
 /// WRITE YOUR ANALYSIS HERE
-/// - ada 3
-/// -   Block, Code yang berada di curly braces, function, looping, dan conditional
-///     Global, variabelnya bisa kita akses dimana saja dalam satu file
-///     Local, mendeklarasikan variabel di block
-/// - Block Scope
-{
-    let x = 2;
-  }
-  
-  /// - Local Scope
-  mobilGue();
-  
-  function mobilGue() {
-    let carName = "Pajero";
-    console.log(carName);
-  }
-  
-  console.log(carName);
-  
+/// -  ada 2
+/// - Global : scope paling luar, yang dapat diakses dimanapun
+/// - Local : variabel yang ada di dalam function
+
   /// - Global Scope
-  let carName = "Pajero";
-  mobilGue();
-  
-  function mobilGue() {
-    console.log("Mobil gue adalah" + carName);
-  }
-  
+  var myIdol = "WannaOne";
+    function myIdol() {
+      return myIdol;
+
+    }
+
+  /// Local Scope
+  function myIdol(){ 
+    var myIdol = "WannaOne";
+    return myIdol;
+  }    
+
+  console.log (myIdol)
   /// Soal - 02
   /// Kamu diminta untuk melakukan analisa terhadap baris kode dibawah ini
   /// - apa yang akan tampil didalam comsole.log ?

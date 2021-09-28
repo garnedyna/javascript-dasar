@@ -14,30 +14,28 @@
 /// - (Number) total pajak yang harus kamu bayarkan
 
 /// EDIT HERE
-function perhitunganPajak(gaji) {
-    if (gaji < 5000000) {
-      return gaji * 0;
-    } else if (gaji >= 5000000 && gaji < 10000000) {
-      return (gaji * 5) / 100;
-    } else if (gaji >= 10000000 && gaji < 20000000) {
-      return (gaji * 10) / 100;
-    } else if (gaji >= 20000000) {
-      return (gaji * 20) / 100;
-    }
+function taxCalc(gaji){
+  
+  if(gaji <= 5000000){
+    const pajak=gaji * 0/100;
+    return pajak;
+  }else if(gaji <= 5000000  ||  gaji <10000000 ){
+    const pajak=gaji * 5/100;
+    return pajak;
+  }else if(gaji <= 10000000 || gaji <20000000 ){
+    const pajak=gaji * 10/100;
+    return pajak;
+  }else if(gaji == 20000000 ){
+    const pajak=gaji * 20/100;
+    return pajak;
   }
+}
+console.log("Jadi Pajaknya sebesar : ",taxCalc(4000000));
+console.log("Jadi Pajaknya sebesar : ",taxCalc(5000000));
+console.log("Jadi Pajaknya sebesar : ",taxCalc(10000000));
+console.log("Jadi Pajaknya sebesar : ",taxCalc(17000000));
+console.log("Jadi Pajaknya sebesar : ",taxCalc(20000000));
   
-  var formatter = new Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-  
-    // These options are needed to round to whole numbers if that's what you want.
-    minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
-    //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
-  });
-  
-  console.log(formatter.format(perhitunganPajak(4500000)));
-  console.log(formatter.format(perhitunganPajak(5000000)));
-  console.log(formatter.format(perhitunganPajak(20000000)));
   
   /// Soal - 02
   /// BMI merupakan sebuah perhitungan yang mana dapat menunjukan apakah seseorang itu masuk dalam kategori obesitas atau tidak. Kamu diminta untuk membuat sebuah fungsi untuk menghitung BMI seseorang serta dapat menentukan apakah orang tersebut obesitas atau tidak.
@@ -91,24 +89,24 @@ function perhitunganPajak(gaji) {
   
   /// EDIT HERE
   function convToUpperCase(sentence) {
-    firstChart = sentence.split("")
-  
+    firstChart = sentence.split(" ")
     for (let index = 0; index < firstChart.length; index++) {
-      ubah = firstChart [index]. toUpperCase () 
-      firstChart[index] = ubah.charAt(0) + firstChart [index].substring(1)
+     ubah = firstChart[index].toUpperCase()
+     firstChart[index] = ubah.charAt(0) + firstChart[index].substring(1)
     }
-    let firstChart = "";
+    let firstChart1 = ""
     for (let index = 0; index < firstChart.length; index++) {
-      firstChart1 = firstChart1 + firstChart[index] + " " 
+        firstChart1 = firstChart1 + firstChart[index] + " "
+        
     }
+    return firstChart1;
+}
 
-    return firstChart1
-  }
-    console.log(convToUpperCase("Hello Bandung"))
   
+  console.log(convToUpperCase("hello bandung"));
+  console.log(convToUpperCase("helloworldwide"));
   
-  convToUpperCase("hello bandung");
-  convToUpperCase("helloworldwide");
+
   
   /// Soal - 04
   /// Buatlah sebuah fungsi yang mana nanti akan mengembalikan HURUF PERTAMA YANG TIDAK KEMBAR
@@ -125,20 +123,35 @@ function perhitunganPajak(gaji) {
   /// (String) huruf yang pertama kali tidak ada kembarannya
   
   /// EDIT HERE
-  function firstNonRepeating(word) {
-    let arr = word.split("");
-  
-    for (let i = 0; i < arr.length; i++) {
-      let temporary = [...arr];
-  
-      temporary.splice(i, 1);
-  
-      if (!temporary.includes(arr[i])) {
-        return console.log(arr[i]);
-      }
+  function firstNonRepeatedChar(word) {
+    let huruf;
+
+    for (let index = 0; index < word.length; index++) {
+        huruf = word[index];
+        if(huruf == " "){
+            return "kata tidak boleh dipisah";
+        }
+        
     }
-  }
+
+    for (let index = 0; index < word.length; index++) {
+        huruf = word[index];
+        let cek = false;
+        for (let j = 0; j < word.length; j++) {
+            if(huruf == word[j] && j != index){
+                cek = true;
+                break;
+            }
+        }
+        if(cek == false){
+            return huruf;
+            break;
+        }
+    }
+    return "";
+}
+
+console.log(firstNonRepeatedChar("hello world"));
+console.log(firstNonRepeatedChar("alloha"));
+console.log(firstNonRepeatedChar("wooohoowh"));
   
-  firstNonRepeating("hello world");
-  firstNonRepeating("alloha");
-  firstNonRepeating("wooohoowh");

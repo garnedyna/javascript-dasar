@@ -13,17 +13,16 @@ const drivingLicense = true;
 /// EDIT HERE
 if (userAge < 18) {
     console.log("Anda belum cukup umur");
-} else {
-    if (drivingLicense == true) {
+} 
+else {
+    if (drivingLicense) {
         console.log("Selamat Berkendara");
-    } else {
+    } 
+    else {
     console.log("Diharapkan untuk membuat SIM terlebih dahulu");
      }
     }
     
-
-    
-
 
 
 /// Soal - 02
@@ -33,23 +32,25 @@ if (userAge < 18) {
 /// - konversi celcius menjadi fahrenheit apabila user memasukan unit berupa "F"
 /// - konversi celcius menjadi celcius apabila user memasukan unit berupa "C"
 /// - menampilkan pesan "Maaf anda salah input", apabila variable tidak memenuhi semua kondisi yang ada
-const temperature = 100; /// suhu
-const unit = "F"; /// inputan
-switch (unit) { 
-/// EDIT HERE
-case "K":
-    result = (temperature + 237.15);
-    console.log(result);
-    break;
-  case "F":
-      result = ((temperature * 9) / 5 + 32);
-    console.log(result)
-    break;
-  case "C":
-    result = (temperature);
-    console.log(result)
-    break;
-  default:
-    console.log("Maaf anda salah input");
-}
+const N = 100;
+  const unit = "F";
+  resultF = (N * 9/5) + 32;
+  resultK = N + 273.15;
+  resultC = N;
+  const F = "farenheit";
+  const K = "kelvin";
+  const C = "celsius"
+  switch (unit) {
+    case 'F':
+      console.log(F,resultF);
+      break;
+    case 'K':
+      console.log(K,resultK);
+      break;
+    case 'C':
+      console.log(C,resultC);
+      break;
+    default:
+      console.log("Maaf anda salah input");
+  }
     
